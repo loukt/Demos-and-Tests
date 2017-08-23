@@ -1,0 +1,18 @@
+{
+    "frameworks": { 
+      "net46":{ 
+        "dependencies": { 
+          "System.IO": "4.0.0.0", 
+          "System.Runtime": "4.0.0.0", 
+          "System.Threading.Tasks": "4.0.0.0",
+ "System.Xml.XPath":"4.3.0",
+ "System.Xml.XDocument": "4.3.0",
+          "Newtonsoft.Json":"8.0.0" ,
+          "Bond.CSharp":"4.2.1",
+          "Microsoft.VisualStudio.Threading":"14.1.131",
+          "Microsoft.Bing.Speech": "2.0.2"
+        } 
+      } 
+    } 
+  } 
+ 
