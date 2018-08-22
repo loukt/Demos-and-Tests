@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeeFoodProject.MenuListingPage" 
+             BindingContext="{Binding MenuListingVM, Source={StaticResource Locator}}" >
+    
+  <ListView x:Name="MyListView"
+            ItemsSource="{Binding Items}"
+            ItemTapped="Handle_ItemTapped" ItemSelected="MyListView_ItemSelected"
+            CachingStrategy="RecycleElement">
+
+       <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Margin="0,5" HeightRequest="100">
+                        <Image Source="{Binding Image}" />
+                        <Grid BackgroundColor="#50000000">
+                            <Label Text="{Binding Title}" Style="{DynamicResource ListItemTextStyle}" />  
+                        </Grid>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    
+  </ListView>
+</ContentPage>

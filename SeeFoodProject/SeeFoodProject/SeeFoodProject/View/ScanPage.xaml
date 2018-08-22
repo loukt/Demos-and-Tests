@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SeeFoodProject"
+             x:Class="SeeFoodProject.View.ScanPage"
+             BindingContext="{Binding MainVM, Source={StaticResource Locator}}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:NegativeBooleanConverter x:Key="NegateBoolean" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        
+        <Grid BackgroundColor="White">
+            <Grid IsVisible="{Binding IsLoading}" BackgroundColor="Red" />
+            <Grid IsEnabled="{Binding IsLoading,Converter={StaticResource NegateBoolean}}" BackgroundColor="White">
+                <!--  -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Margin="0,20,0,0" FontSize="Medium"  TextColor="Black"  FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Welcome to SeeFood"  />
+                    <Label Grid.Row="1" Margin="10" FontSize="Small" TextColor="LightGray" FontAttributes="Italic" Text="Push the + button to load your menu or snap a pic of the menu in front of you !" />
+                </Grid>
+                <StackLayout Grid.Row="1">
+                    <!-- Place new controls here -->
+                    <Button Text="+" FontSize="200" BackgroundColor="Transparent" BorderColor="Transparent" 
+                        WidthRequest="200" HeightRequest="200"
+                        TextColor="LightGray"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        Command="{Binding TakePictureCommand}" />
+                </StackLayout>
+            </Grid>
+
+            <Grid IsVisible="{Binding IsLoading}" BackgroundColor="Red" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
